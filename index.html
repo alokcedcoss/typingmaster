@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.main1{
+			
+			background-color:#01073B;
+			width:auto;
+		height: 50%;
+			font-size: 30px;
+			text-align: center;
+			color: white;
+			opacity: 0.9;
+			padding-top: 1%;
+	
+		
+		}
+		.box1
+		{
+			
+			
+			color:white;
+			height:50%;
+			width:auto;
+			padding: 1%;
+			font-weight: bold;
+			font-size: 25px;
+		
+			text-align: justify;
+			background-color:#C0C0C0;
+		}
+		.box2
+		{
+			border:5px inset grey;
+			margin-top: 1%;
+			color: black;
+		
+			font-size: 20px;
+
+		}
+	.text
+	{	
+		text-align: center;
+		color: white;
+		background-color:#0CC9CB; 
+	}
+	.paragraph
+{
+	text-align: center;
+}
+textarea{
+	border-radius: 10px;
+}
+
+	</style>
+	<title>Typing Master</title>
+</head>
+<body style=" background-color:white;">
+<div class="main1"><h1>Typing Games</h1>
+<h5>Test your typing speed:</h5>
+<h3 style="background-color:#0CC9CB">This free online typing tutor was designed to help you learn to type as fast and easy as possible. </h3>
+</div>
+<div class="paragraph"><p style="font-size: 30px;font-weight:bold;">Types the given below Paragrapgh and Test your Typing Speed.</p>
+
+
+<div class="box1 " id="check">Avadh is claimed to be among the most ancient of Hindu states. According to popular legend, Ramchandra of Ayodhya, the hero of the Ramayana, gifted the territory of Lucknow to his devoted brother Lakshman after he had conquered Sri Lanka and completed his term of exile in the jungle.</div>
+<div class="paragraph"><textarea id="check2" rows="10" cols="79" placeholder="Type the above text here......" class="box2" onkeypress="f2()" onfocus="f1()" ></textarea></div>
+
+<div><button onclick="window.location.reload()" style=" border-radius: 25px;height: 60px; width:150px;font-size: 20px;">Start Again</button></div>
+</div>
+<h4><time>00:00:00</time></h4>
+
+ <script>
+
+ var str1="";
+ var str2="";
+var t=0;
+function f1()
+{
+ 	var h1 = document.getElementsByTagName('h4')[0],
+   
+    seconds = 0, minutes = 0, hours = 0;
+   
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    
+    h1.textContent = hours + ":" + minutes+":"+ seconds;
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+timer();
+}
+
+function f2()
+{ debugger;
+		str1=document.getElementById('check').innerHTML;
+		str2=document.getElementById('check2').value;
+  var n = str1.localeCompare(str2);
+
+if(n==0)
+	{
+		clearTimeout(t);
+	}
+  
+}
+
+
+ 	  </script>
+</body>
+</html>
